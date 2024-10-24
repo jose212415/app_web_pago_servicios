@@ -6,7 +6,7 @@ import { Link, useNavigate, Outlet, useLocation } from "react-router-dom";
 function UserLayout() {
     const navigate = useNavigate();
     const location = useLocation();
-    const [requests, setRequests] = useState([]);
+    const [requests] = useState([]);
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -14,7 +14,7 @@ function UserLayout() {
 
         const currentTime = Date.now();
         const timeRemaining = tokenExpiration - currentTime;
-        const minutesRemaining = Math.floor(timeRemaining / 1000 / 60);
+        //const minutesRemaining = Math.floor(timeRemaining / 1000 / 60);
 
         if (token && timeRemaining > 0 && location.pathname === "/user") {
             navigate("dashboard-user");

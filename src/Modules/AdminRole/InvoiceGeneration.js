@@ -8,7 +8,6 @@ function InvoiceAdministration() {
     const [showElectricityModal, setShowElectricityModal] = useState(false);
     const [showWaterModal, setShowWaterModal] = useState(false);
     const [services, setServices] = useState([]);
-    const [users, setUsers] = useState([]);
     const [meters, setMeters] = useState([]);
 
     useEffect(() => {
@@ -65,8 +64,7 @@ function InvoiceAdministration() {
                 if (!response.ok) {
                     throw new Error('Error fetching users');
                 }
-                const data = await response.json();
-                setUsers(data);
+                //const data = await response.json();
             } catch (error) {
                 console.error('Error fetching users', error);
             }
