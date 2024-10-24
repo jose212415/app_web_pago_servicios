@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.06af8768.css",
+    "main.js": "/static/js/main.9e28496d.js",
+    "static/js/239.4b38fb5d.chunk.js": "/static/js/239.4b38fb5d.chunk.js",
+    "static/js/213.4d424ace.chunk.js": "/static/js/213.4d424ace.chunk.js",
+    "static/js/732.662b0d64.chunk.js": "/static/js/732.662b0d64.chunk.js",
+    "static/js/453.31f3734d.chunk.js": "/static/js/453.31f3734d.chunk.js",
+    "static/media/Logo_City_Pay.jpg": "/static/media/Logo_City_Pay.66963a6bb822f58570d9.jpg",
+    "index.html": "/index.html",
+    "main.06af8768.css.map": "/static/css/main.06af8768.css.map",
+    "main.9e28496d.js.map": "/static/js/main.9e28496d.js.map",
+    "239.4b38fb5d.chunk.js.map": "/static/js/239.4b38fb5d.chunk.js.map",
+    "213.4d424ace.chunk.js.map": "/static/js/213.4d424ace.chunk.js.map",
+    "732.662b0d64.chunk.js.map": "/static/js/732.662b0d64.chunk.js.map",
+    "453.31f3734d.chunk.js.map": "/static/js/453.31f3734d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.06af8768.css",
+    "static/js/main.9e28496d.js"
+  ]
+}
