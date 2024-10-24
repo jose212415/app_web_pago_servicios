@@ -1,0 +1,144 @@
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FaBars } from "react-icons/fa"; // Icono para el menú en pantallas pequeñas
+
+function Dashboard() {
+    const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleLogout = () => {
+        // Remover token
+        console.log("Cerrando sesión");
+        localStorage.removeItem("token");
+        localStorage.removeItem("tokenExpiration");
+
+        // Redirigir al login
+        navigate("/");
+    };
+
+    const toggleDrawer = () => {
+        setIsOpen(!isOpen);
+    };
+
+    return (
+        <div className="flex min-h-screen bg-gray-100">
+            {/* Drawer Menu */}
+            <div className={`bg-blue-600 p-4 text-white w-64 space-y-6 ${isOpen ? "block" : "hidden"} lg:block`}>
+                <h2 className="text-2xl font-bold">City Pay</h2>
+                <nav>
+                    <ul className="space-y-4">
+                        <li>
+                            <Link to="/cuenta" className="text-white hover:underline">
+                                Cuenta
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/realizar-pago" className="text-white hover:underline">
+                                Realizar Pago
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/historial-pagos" className="text-white hover:underline">
+                                Historial de Pagos
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/estadisticas" className="text-white hover:underline">
+                                Estadísticas
+                            </Link>
+                        </li>
+                        <li>
+                            <button
+                                onClick={handleLogout}
+                                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full text-left"
+                            >
+                                Cerrar Sesión
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            {/* Botón de menú para pantallas pequeñas */}
+            <div className="lg:hidden p-4">
+                <button onClick={toggleDrawer}>
+                    <FaBars className="text-2xl text-blue-600" />
+                </button>
+            </div>
+
+            {/* Contenido del Dashboard */}
+            <div className="flex-1 p-6">
+                {/* Resumen General */}
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                        <h2 className="text-lg font-semibold text-gray-800">Pagos Totales</h2>
+                        <p className="text-2xl text-green-600">$5000</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                        <h2 className="text-lg font-semibold text-gray-800">Pagos Pendientes</h2>
+                        <p className="text-2xl text-red-600">3</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                        <h2 className="text-lg font-semibold text-gray-800">Última Factura</h2>
+                        <p className="text-2xl text-gray-600">01/09/2024</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                        <h2 className="text-lg font-semibold text-gray-800">Servicios Pagados</h2>
+                        <p className="text-2xl text-blue-600">Agua, Electricidad</p>
+                    </div>
+                </section>
+
+                {/* Historial de Pagos */}
+                <section className="bg-white p-6 rounded-lg shadow-md mb-6 overflow-x-auto">
+                    <h2 className="text-xl font-semibold text-gray-800 mb-4">Historial de Pagos</h2>
+                    <table className="min-w-full table-auto">
+                        <thead>
+                            <tr>
+                                <th className="px-4 py-2 text-left">Fecha</th>
+                                <th className="px-4 py-2 text-left">Servicio</th>
+                                <th className="px-4 py-2 text-left">Monto</th>
+                                <th className="px-4 py-2 text-left">Estado</th>
+                                <th className="px-4 py-2 text-left">Factura</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="border px-4 py-2">01/09/2024</td>
+                                <td className="border px-4 py-2">Electricidad</td>
+                                <td className="border px-4 py-2">$120</td>
+                                <td className="border px-4 py-2 text-green-600">Pagado</td>
+                                <td className="border px-4 py-2">
+                                    <Link to="#" className="text-blue-500 hover:underline">Descargar</Link>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="border px-4 py-2">15/08/2024</td>
+                                <td className="border px-4 py-2">Agua</td>
+                                <td className="border px-4 py-2">$50</td>
+                                <td className="border px-4 py-2 text-red-600">Pendiente</td>
+                                <td className="border px-4 py-2">
+                                    <Link to="#" className="text-blue-500 hover:underline">Descargar</Link>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                {/* Estadísticas de Pagos */}
+                <section className="bg-white p-6 rounded-lg shadow-md">
+                    <h2 className="text-xl font-semibold text-gray-800 mb-4">Estadísticas de Pagos</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
+                            <p>Gráfico de pagos mensuales</p>
+                        </div>
+                        <div className="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
+                            <p>Gráfico de hábitos de gasto</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    );
+}
+
+export default Dashboard;

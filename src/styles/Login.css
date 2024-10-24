@@ -1,0 +1,9 @@
+/* Deshabilitar el ícono de mostrar contraseña en Microsoft Edge */
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+/* Deshabilitar el ícono de mostrar contraseña en otros navegadores como IE */
+input[type="password"]::-ms-clear {
+    display: none;
+}
