@@ -15,7 +15,7 @@ function RealizarPago() {
         e.preventDefault();
         setError("");
         const token = localStorage.getItem('token');
-        const tokenExpiration = localStorage.getItem('tokenExpiration');
+        //const tokenExpiration = localStorage.getItem('tokenExpiration');
         const userId = localStorage.getItem('id');
         const status = 'pending';
         

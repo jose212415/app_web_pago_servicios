@@ -1,13 +1,13 @@
 //Dashboard User
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FaBars } from "react-icons/fa"; // Icono para el menú en pantallas pequeñas
+import React from "react";
+//import { useNavigate } from "react-router-dom";
+//import { FaBars } from "react-icons/fa"; // Icono para el menú en pantallas pequeñas
 
 function DashboardUser() {
-    const navigate = useNavigate();
-    const [isOpen, setIsOpen] = useState(false); // Estado para manejar el drawer en móviles
+    //const navigate = useNavigate();
+    //const [isOpen, setIsOpen] = useState(false); // Estado para manejar el drawer en móviles
 
-    const handleLogout = () => {
+    /*const handleLogout = () => {
         // Remover token
         console.log("Cerrando sesión");
         localStorage.removeItem("token");
@@ -15,11 +15,11 @@ function DashboardUser() {
 
         // Redirigir al login
         navigate("/");
-    };
+    };*/
 
-    const toggleDrawer = () => {
+    /*const toggleDrawer = () => {
         setIsOpen(!isOpen);
-    };
+    };*/
 
     return (
         <div className="min-h-screen bg-gradient-to-r from-blue-400 to-indigo-500 p-6 flex items-center justify-center">

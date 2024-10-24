@@ -32,7 +32,7 @@ function InvoiceModal({ services, meters, onClose, onSave, isWater, isElectricit
             setService(electricityService?.serviceType || "");
         } else {
             const waterService = services.find(service => service.serviceType === "Agua");
-            const garbageService = services.find(service => service.serviceType === "Basura");
+            //const garbageService = services.find(service => service.serviceType === "Basura");
             setSelectedService(waterService?._id || "");
             setService(waterService?.serviceType || "");
         }

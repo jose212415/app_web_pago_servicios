@@ -24,7 +24,7 @@ const PayPalButton = ({ totalAmountGTQ, onPaymentSuccess }) => {
     useEffect(() => {
         if (!totalAmountUSD) return;
 
-        const clientIdLive = 'AWUDbK3MVPHHb9qii3KYHYVjOa2AOmyOI5-jD9_O4UvckE_F-70-CU-dHjgg23Gtl8VUH7eiEWJppV49';
+        //const clientIdLive = 'AWUDbK3MVPHHb9qii3KYHYVjOa2AOmyOI5-jD9_O4UvckE_F-70-CU-dHjgg23Gtl8VUH7eiEWJppV49';
         const clientIdSandbox = 'AfwH6XY7Q83EzdNpwtfASJz7Ui3c5jrcvYGASqMnqPg1OO0OKbpDeBpRc2S1oVX73H9kTnmn67Dt6ucX';
         const addPayPalScript = () => {
             const script = document.createElement('script');
